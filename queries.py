@@ -5,9 +5,9 @@ conf = SparkConf().setAppName("CloseContactsApplication").setMaster("local[*]")
 sc = SparkContext.getOrCreate(conf=conf)
 
 # adjust your path
-people_large_rdd = sc.textFile("")
-infected_small_rdd = sc.textFile("")
-people_some_infected_large_rdd = sc.textFile("")
+people_large_rdd = sc.textFile("hdfs://localhost:9000/project3/people-large.txt")
+infected_small_rdd = sc.textFile("hdfs://localhost:9000/project3/infected-small.txt")
+people_some_infected_large_rdd = sc.textFile("hdfs://localhost:9000/project3/some-infected.txt")
 
 # helpers
 def parse_line(line):
